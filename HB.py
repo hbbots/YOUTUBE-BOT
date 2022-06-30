@@ -7,7 +7,7 @@ import progress
 from progress import progress_for_pyrogram,TimeFormatter,time,UPLOAD_START,humanbytes,format_bytes
 
 HB = Client(
-    "MSG_DELETING Bot",
+    "YOUTUBE Bot",
     bot_token = os.environ["BOT_TOKEN"],
     api_id = int(os.environ["API_ID"]),
     api_hash = os.environ["API_HASH"]
@@ -29,10 +29,9 @@ MADE BY @TELSABOTS**
 
 ABOUT_TEXT = """
  🤖<b>BOT :YOUTUBE DOWNLOADER 🤖</b>
-
-📢<b>CHANNEL :</b>@TELSA BOTS
-
-🧑🏼‍💻DEV🧑🏼‍💻: @ALLUADDICT
+ 🤩<b>SOURCE :</b>  <a href='https://github.com/hbbots/YOUTUBE-BOT'>CLICK HERE❤️</a>
+ 📢<b>CHANNEL :</b>@TELSA BOTS
+ 🧑🏼‍💻DEV🧑🏼‍💻: @ALLUADDICT
 
 """
 
