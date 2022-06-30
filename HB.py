@@ -124,7 +124,7 @@ async def about_message(bot, update):
     )
 
 
-
+destination=""
 
 from pytube import YouTube
 
@@ -142,31 +142,29 @@ async def ytdl(_, message):
    global ytmedium
    global ytworst
    global yt
-   global ytaudio
    global song
+   global file
+   global ytaudio
    var=message.text
    url= message.text
    yt = YouTube(url)
    chat_id =message.chat.id
    thumb = yt.thumbnail_url
-
-   ythigh = yt.streams.get_highest_resolution()
-   ythd = yt.streams.get_by_resolution(resolution = '720p')
-   ytmedium = yt.streams.get_by_resolution(resolution = '480p')
+   ythd = yt.streams.get_highest_resolution()
    ytlow = yt.streams.get_by_resolution(resolution ='360p')
-   ytverylow = yt.streams.get_by_resolution(resolution = '240p')
-   ytworst = yt.streams.get_by_resolution(resolution = '144p')
-   
+   file = yt.streams.filter(only_audio=True).first()
+   ytaudio = yt.streams.filter(only_audio=True).first()
+   download = ytaudio.download(filename=f"{str(yt.title)}")
+   rename = os.rename(download, f"{str(yt.title)}.mp3")
+   audio_size = f"{int(format_bytes(ytaudio.filesize)[0]):.2f}{format_bytes(ytaudio.filesize)[1]}"
+   hd = f"{int(format_bytes(ythd.filesize)[0]):.2f}{format_bytes(ythd.filesize)[1]}"
+   low = f"{int(format_bytes(ytlow.filesize)[0]):.2f}{format_bytes(ytlow.filesize)[1]}"
+
    result_buttons2 = InlineKeyboardMarkup(
     [[
-        InlineKeyboardButton('🎬 1080P', callback_data='high'),
-        InlineKeyboardButton('🎬 720p', callback_data='720p')
-    ],[
-        InlineKeyboardButton('🎬 480p', callback_data='480p'),
-        InlineKeyboardButton('🎬 360p ', callback_data='360p')
-    ],[
-        InlineKeyboardButton('🎬 240p', callback_data='240p'),
-        InlineKeyboardButton('🎬 144p', callback_data='144p')
+        InlineKeyboardButton('🎬720P ' + hd, callback_data='high'),
+        InlineKeyboardButton('🎬 360p' + low, callback_data='360p'),
+        InlineKeyboardButton('🎧 AUDIO '+ audio_size , callback_data='audio')
     ]]
    )
    await message.reply_photo(
@@ -178,56 +176,16 @@ async def ytdl(_, message):
     )
 import time
 start_time = time.time()
+
+
 @HB.on_callback_query()
-async def cb_data(bot, update):
-    if update.data == '720p':
-     try:
-      await HB.send_video(     
-        chat_id = update.message.chat.id, 
-        video = ythd.download(),
-        caption=result_text,
-        reply_markup=result_buttons,
-        progress=progress_for_pyrogram,
-                    progress_args=(
-                        progress.UPLOAD_START,
-                        update.message,
-                        start_time
-                    )
-      )
-
-        
-     except:
-        await HB.send_message(
-            chat_id = update.message.chat.id,
-            text="**😔 720P QUALITY IS NOT AVAILABLE\n CHOOSE ANY OTHER QUALITIES**")  
-            
-             
-    elif update.data == '480p':
-      try:
-      
-       await HB.send_video(
-       chat_id = update.message.chat.id, 
-       video = ytmedium.download(),
-       caption=result_text,
-       reply_markup=result_buttons,
-       progress=progress_for_pyrogram,
-                    progress_args=(
-                        progress.UPLOAD_START,
-                        update.message,
-                        start_time
-                    )
-            )
-
-      except:
-        await HB.send_message(
-            chat_id = update.message.chat.id,
-            text="**😔 480P QUALITY IS NOT AVAILABLE \n CHOOSE ANY OTHER QUALITIES**")  
+async def cb_data(bot, update):                     
     
-    elif update.data == 'high':
+    if update.data == 'high':
      try:
         await  HB.send_video(
             chat_id = update.message.chat.id, 
-            video = ythigh.download(),
+            video = ythd.download(),
             caption=result_text,
             reply_markup=result_buttons,
             progress=progress_for_pyrogram,
@@ -261,14 +219,13 @@ async def cb_data(bot, update):
         await HB.send_message(
             chat_id = update.message.chat.id,
             text="**😔 360P QUALITY IS NOT AVAILABLE \n CHOOSE ANY OTHER QUALITIES**")  
-    
-    elif update.data == '240p':
-     try:
 
-      await  HB.send_video(
-        chat_id = update.message.chat.id, 
-        video = ytverylow.download(),
+    elif update.data == 'audio':
+        await  HB.send_audio(
+        chat_id = update.message.chat.id,
+        audio=f"{str(yt.title)}.mp3",
         caption=result_text,
+        duration=yt.length,
         reply_markup=result_buttons,
         progress=progress_for_pyrogram,
                     progress_args=(
@@ -277,34 +234,8 @@ async def cb_data(bot, update):
                         start_time
                     )
       )
-    
+     
 
-     except:
-         await HB.send_message(
-        chat_id = update.message.chat.id,
-         text="**😔 240P QUALITY IS NOT AVAILABLE\n CHOOSE ANY OTHER QUALITIES**")    
-
-    elif update.data == '144p':
-     try:
-        await  HB.send_video(
-        chat_id = update.message.chat.id,
-        video= yt.worst.download(),
-        caption=result_text,
-        reply_markup=result_buttons,
-        progress=progress_for_pyrogram,
-                    progress_args=(
-                        progress.UPLOAD_START,
-                        update.message,
-                        start_time
-                    )
-        )
-
-
-     except:
-        await HB.send_message(
-            chat_id = update.message.chat.id,
-            text="😔 144P QUALITY IS NOT AVAILABLE\n CHOOSE ANY OTHER QUALITIES**")
-    
     elif update.data == "home":
         await update.message.edit_text(
             text=START_TEXT.format(update.from_user.mention),
