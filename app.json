@@ -1,13 +1,14 @@
 {
-  "name": "TELSA DISCUSS UNPIN",
+  "name": "NPIN",
   "description": "DISCUSS UNPIN BOT OPENSOURCE",
   "keywords": [
-    "DISCUSS UNPIN",
+    "YOUTUBE
     "TGBOT",
-    "TELSA"
+    "YTDL",
+    "VIDEO"
   ],
-  "logo": "https://telegra.ph/file/567835a9cee9e8691e4c2.jpg",
-  "repository": "https://github.com/TELSABOTS/DISCUSSION-UNPIN-BOT",
+  "logo": "https://telegra.ph/file/e8a39b06fabbfac6bce8f.jpg",
+  "repository": "https://github.com/hbbots/YOUTUBE-BOT"
   "env": {
     "WEBHOOK": {
       "description": "LEAVE IT",
