@@ -42,7 +42,7 @@ START_BUTTONS = InlineKeyboardMarkup(
         InlineKeyboardButton('📢CHANNEL📢', url='https://telegram.me/TELSABOTS'),
         InlineKeyboardButton('🧑🏼‍💻DEV🧑🏼‍💻', url='https://telegram.me/alluaddict')
         ],[
-        InlineKeyboardButton('🆘HELP🆘', callback_data='python'),
+        InlineKeyboardButton('🆘HELP🆘', callback_data='help'),
         InlineKeyboardButton('🤗ABOUT🤗', callback_data='about'),
         InlineKeyboardButton('🔐CLOSE🔐', callback_data='close')
         ]]
@@ -137,9 +137,6 @@ async def ytdl(_, message):
    global ythd
    global ythigh
    global ytlow
-   global ytverylow
-   global ytmedium
-   global ytworst
    global yt
    global song
    global file
@@ -161,10 +158,10 @@ async def ytdl(_, message):
 
    result_buttons2 = InlineKeyboardMarkup(
     [[
-        InlineKeyboardButton('🎬720P ' + hd, callback_data='high'),
-        InlineKeyboardButton('🎬 360p' + low, callback_data='360p')
+        InlineKeyboardButton('🎬720P ' +' ⭕️ '+ hd, callback_data='high'),
+        InlineKeyboardButton('🎬 360p ' + '⭕️ ' +  low, callback_data='360p')
     ],[
-        InlineKeyboardButton('🎧 AUDIO '+ audio_size , callback_data='audio')
+        InlineKeyboardButton('🎧 AUDIO '+  '⭕️ ' +  audio_size , callback_data='audio')
     ]]
    )
    await message.reply_photo(
