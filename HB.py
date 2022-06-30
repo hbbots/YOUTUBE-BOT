@@ -1,7 +1,8 @@
 
-import os 
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup 
-from pyrogram import Client, filters,emoji
+from pyrogram import Client, filters, emoji
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pytube import YouTube
+from pyrogram import Client, filters
 from pyrogram.types import Message
 HB = Client(
     "MSG_DELETING Bot",
@@ -9,28 +10,22 @@ HB = Client(
     api_id = int(os.environ["API_ID"]),
     api_hash = os.environ["API_HASH"]
 )  
-
 START_TEXT = """**
 HI {}, 
-youtubebot
+I AM A YOUTUBE DOWNLOADER BOT
 
 MADE BY @TELSABOTS**"""
 
 HELP_TEXT = """**
-SENT ANY TEXT MESSAGE.......
+SENT ANY URL .......
 
-THEN REPLY WITH ANY /COMMAND
-
-eg :- /python
-
-PRESS /LIST COMMAND TO KNOW ABOUT
-CUREENTLY SUPPORTED EXTENSIONS
+THEN SELECT AVAILABLE QUALITY
 
 MADE BY @TELSABOTS**
 """
 
 ABOUT_TEXT = """
- 🤖<b>BOT :MEDIA INFO 🤖</b>
+ 🤖<b>BOT :YOUTUBE DOWNLOADER 🤖</b>
 
 📢<b>CHANNEL :</b>@TELSA BOTS
 
@@ -177,67 +172,135 @@ async def ytdl(_, message):
             quote=True,
     
     )
-
+import time
+start_time = time.time()
 @HB.on_callback_query()
 async def cb_data(bot, update):
     if update.data == '720p':
      try:
-      await HB.send_video(
+      await HB.answer_callback_query(query_id=update.message.chat.id, text="HI", show_alert=True)
+      await HB.send_video(     
         chat_id = update.message.chat.id, 
-        video = ythd.download())
+        video = ythd.download(),
+        caption=result_text,
+        reply_markup=result_buttons,
+        progress=progress_for_pyrogram,
+                    progress_args=(
+                        progress.UPLOAD_START,
+                        update.message,
+                        start_time
+                    )
+      )
+
+        
      except:
         await HB.send_message(
             chat_id = update.message.chat.id,
-            text="**😔 720P QUALITY IS NOT AVIALBLE\n CHOOSE ANY OTHER QUALITIES**")   
+            text="**😔 720P QUALITY IS NOT AVAILABLE\n CHOOSE ANY OTHER QUALITIES**")  
+            
+             
     elif update.data == '480p':
       try:
+      
        await HB.send_video(
        chat_id = update.message.chat.id, 
-       video = ytmedium.download())
+       video = ytmedium.download(),
+       caption=result_text,
+       reply_markup=result_buttons,
+       progress=progress_for_pyrogram,
+                    progress_args=(
+                        progress.UPLOAD_START,
+                        update.message,
+                        start_time
+                    )
+            )
+
       except:
         await HB.send_message(
             chat_id = update.message.chat.id,
-            text="**😔 480P QUALITY IS NOT AVIALBLE \n CHOOSE ANY OTHER QUALITIES**")  
+            text="**😔 480P QUALITY IS NOT AVAILABLE \n CHOOSE ANY OTHER QUALITIES**")  
     
     elif update.data == 'high':
      try:
         await  HB.send_video(
             chat_id = update.message.chat.id, 
-            video = ythigh.download())
+            video = ythigh.download(),
+            caption=result_text,
+            reply_markup=result_buttons,
+            progress=progress_for_pyrogram,
+                    progress_args=(
+                        progress.UPLOAD_START,
+                        update.message,
+                        start_time
+                    )
+      )
      except:
         await HB.send_message(
             chat_id = update.message.chat.id,
-            text="**😔 1080P QUALITY IS NOT AVIALBLE\n CHOOSE ANY OTHER QUALITIES**")    
+            text="**😔 1080P QUALITY IS NOT AVAILABLE\n CHOOSE ANY OTHER QUALITIES**")    
     
     elif update.data == '360p':
      try:
       await  HB.send_video(
         chat_id = update.message.chat.id, 
-        video = ytlow.download())
+        video = ytlow.download(),
+        caption=result_text,
+        reply_markup=result_buttons,
+       progress=progress_for_pyrogram,
+                    progress_args=(
+                        progress.UPLOAD_START,
+                        update.message,
+                        start_time
+                    )
+        )
+
      except:
         await HB.send_message(
             chat_id = update.message.chat.id,
-            text="**😔 360P QUALITY IS NOT AVIALBLE \n CHOOSE ANY OTHER QUALITIES**")  
+            text="**😔 360P QUALITY IS NOT AVAILABLE \n CHOOSE ANY OTHER QUALITIES**")  
     
     elif update.data == '240p':
      try:
+
       await  HB.send_video(
         chat_id = update.message.chat.id, 
-        video = ytverylow.download())
+        video = ytverylow.download(),
+        caption=result_text,
+        reply_markup=result_buttons,
+        progress=progress_for_pyrogram,
+                    progress_args=(
+                        progress.UPLOAD_START,
+                        update.message,
+                        start_time
+                    )
+      )
+    
+
      except:
          await HB.send_message(
         chat_id = update.message.chat.id,
-         text="**😔 240P QUALITY IS NOT AVIALBLE\n CHOOSE ANY OTHER QUALITIES**")    
+         text="**😔 240P QUALITY IS NOT AVAILABLE\n CHOOSE ANY OTHER QUALITIES**")    
 
     elif update.data == '144p':
      try:
         await  HB.send_video(
         chat_id = update.message.chat.id,
-        video= yt.worst.download())
+        video= yt.worst.download(),
+        caption=result_text,
+        reply_markup=result_buttons,
+        progress=progress_for_pyrogram,
+                    progress_args=(
+                        progress.UPLOAD_START,
+                        update.message,
+                        start_time
+                    )
+        )
+
+
      except:
         await HB.send_message(
             chat_id = update.message.chat.id,
-            text="😔 144P QUALITY IS NOT AVIALBLE\n CHOOSE ANY OTHER QUALITIES**")
+            text="😔 144P QUALITY IS NOT AVAILABLE\n CHOOSE ANY OTHER QUALITIES**")
     
     elif update.data == "home":
         await update.message.edit_text(
