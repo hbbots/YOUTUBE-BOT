@@ -1,0 +1,42 @@
+{
+  "name": "TELSA DISCUSS UNPIN",
+  "description": "DISCUSS UNPIN BOT OPENSOURCE",
+  "keywords": [
+    "DISCUSS UNPIN",
+    "TGBOT",
+    "TELSA"
+  ],
+  "logo": "https://telegra.ph/file/567835a9cee9e8691e4c2.jpg",
+  "repository": "https://github.com/TELSABOTS/DISCUSSION-UNPIN-BOT",
+  "env": {
+    "WEBHOOK": {
+      "description": "LEAVE IT",
+      "value": "ANYTHING"
+    },
+    "BOT_TOKEN": {
+      "description": "YOUR BOT TOKEN FROM @BotFather",
+      "value": ""
+    },
+    "API_ID": {
+      "description": "YOUR API ID, USE @TeleORG_Bot  ",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "YOUR API HASH, USE @TeleORG_Bot ",
+      "value": ""
+    }
+  },
+  "addons": [
+  ],
+  "buildpacks": [{
+    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+  }, {
+    "url": "heroku/python"
+  }],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
