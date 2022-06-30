@@ -1,15 +1,21 @@
-import os
-from pyrogram import Client, filters, emoji
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from pytube import YouTube
-from pyrogram import Client, filters
+
+
+from pyrogram import enums
+import os 
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup 
+from pyrogram import Client, filters,emoji
 from pyrogram.types import Message
+import progress
+from progress import progress_for_pyrogram,TimeFormatter,time,UPLOAD_START,humanbytes
+
+
 HB = Client(
     "MSG_DELETING Bot",
     bot_token = os.environ["BOT_TOKEN"],
     api_id = int(os.environ["API_ID"]),
     api_hash = os.environ["API_HASH"]
 )  
+
 START_TEXT = """**
 HI {}, 
 I AM A YOUTUBE DOWNLOADER BOT
@@ -178,7 +184,6 @@ start_time = time.time()
 async def cb_data(bot, update):
     if update.data == '720p':
      try:
-      await HB.answer_callback_query(query_id=update.message.chat.id, text="HI", show_alert=True)
       await HB.send_video(     
         chat_id = update.message.chat.id, 
         video = ythd.download(),
