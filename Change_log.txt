@@ -1,3 +1,6 @@
+v0.4 release notes
+
+⁕ADDED PROGRESS BAR
 v0.3 release notes
 
 ⁕DOWNLOAD YOUTUBE VIDEOS IN DIFFERENT QUALITIES
