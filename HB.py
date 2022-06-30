@@ -162,7 +162,8 @@ async def ytdl(_, message):
    result_buttons2 = InlineKeyboardMarkup(
     [[
         InlineKeyboardButton('🎬720P ' + hd, callback_data='high'),
-        InlineKeyboardButton('🎬 360p' + low, callback_data='360p'),
+        InlineKeyboardButton('🎬 360p' + low, callback_data='360p')
+    ][
         InlineKeyboardButton('🎧 AUDIO '+ audio_size , callback_data='audio')
     ]]
    )
