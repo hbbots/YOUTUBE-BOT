@@ -91,7 +91,7 @@ result_buttons = InlineKeyboardMarkup(
         ]]
     )
 
-result_text = """**JOIN @TELSABOTS"""
+result_text = """**JOIN @TELSABOTS**"""
 
 @HB.on_message(filters.command(["start"]))
 async def start(bot, update):
