@@ -1,20 +1,16 @@
 {
   "name": "HB YOUTUBE DL BOT",
   "description": "HB YOUTUBE DOWNLOADER BOT",
-  "name": "TELSA DISCUSS UNPIN",
-  "description": "DISCUSS UNPIN BOT OPENSOURCE",
+
   "keywords": [
-    "YOUTUBE"
-    "DISCUSS UNPIN",
+    "YOUTUBE",
     "TGBOT",
     "YTDL",
     "VIDEO"
  
   ],
   "logo": "https://telegra.ph/file/e8a39b06fabbfac6bce8f.jpg",
-  "repository": "https://github.com/hbbots/YOUTUBE-BOT"
-  "logo": "https://telegra.ph/file/567835a9cee9e8691e4c2.jpg",
-  "repository": "https://github.com/hbbots/YOUTUBE-BOT/",
+  "repository": "https://github.com/hbbots/YOUTUBE-BOT",
   "env": {
     "WEBHOOK": {
       "description": "LEAVE IT",
