@@ -77,8 +77,15 @@ ABOUT_BUTTONS = InlineKeyboardMarkup(
         ]]
     )
 
-
-
+SOURCE_TEXT = """</b>PRESS SOURCE BUTTON \n FOR SOURCE CODE</b>"""
+SOURCE_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('✅SOURCE✅', url='https://github.com/hbbots/YOUTUBE-BOT'),
+        InlineKeyboardButton('🧑🏼‍💻DEV🧑🏼‍💻', url='https://telegram.me/alluaddict')
+        ],[
+        InlineKeyboardButton('🔐CLOSE🔐', callback_data='close')
+        ]]
+    )
 
 result_buttons = InlineKeyboardMarkup(
         [[
@@ -120,9 +127,16 @@ async def about_message(bot, update):
         disable_web_page_preview=True,
         reply_markup=reply_markup
     )
+@HB.on_message(filters.command(["source"]))
+async def about_message(bot, update):
+    text = SOURCE_TEXT
+    reply_markup = SOURCE_BUTTONS
+    await update.reply_text(
+        text=text,
+        disable_web_page_preview=True,
+        reply_markup=reply_markup
+    )
 
-
-destination=""
 
 from pytube import YouTube
 
