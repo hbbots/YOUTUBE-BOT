@@ -4,8 +4,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import Client, filters,emoji
 from pyrogram.types import Message
 import progress
-from progress import progress_for_pyrogram,TimeFormatter,time,UPLOAD_START,humanbytes
-
+from progress import progress_for_pyrogram,TimeFormatter,time,UPLOAD_START,humanbytes,format_bytes
 
 HB = Client(
     "MSG_DELETING Bot",
