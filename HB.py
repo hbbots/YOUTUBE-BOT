@@ -30,7 +30,7 @@ MADE BY @TELSABOTS**
 ABOUT_TEXT = """
  🤖<b>BOT :YOUTUBE DOWNLOADER 🤖</b>
  🤩<b>SOURCE :</b>  <a href='https://github.com/hbbots/YOUTUBE-BOT'>CLICK HERE❤️</a>
- 📢<b>CHANNEL :</b>@TELSA BOTS
+ 📢<b>CHANNEL :</b>@TELSABOTS
  🧑🏼‍💻DEV🧑🏼‍💻: @ALLUADDICT
 
 """
