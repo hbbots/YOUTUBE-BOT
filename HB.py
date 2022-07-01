@@ -144,7 +144,6 @@ async def ytdl(_, message):
    global ythd
    global ytlow
    global yt
-   global thumbloc
    global song
    global file
    global ytaudio
@@ -164,10 +163,6 @@ async def ytdl(_, message):
    low = f"{int(format_bytes(ytlow.filesize)[0]):.2f}{format_bytes(ytlow.filesize)[1]}"
    
    import requests
-   thumbloc = yt.title + "thumb"
-   thumb = requests.get(yt.thumbnail_url, allow_redirects=True)
-   open(thumbloc , 'wb').write(thumb.content)
-
    result_buttons2 = InlineKeyboardMarkup(
     [[
         InlineKeyboardButton('🎬720P ' +' ⭕️ '+ hd, callback_data='high'),
@@ -237,7 +232,6 @@ async def cb_data(bot, update):
         audio=f"{str(yt.title)}.mp3",
         caption=result_text,
         duration=yt.length,
-        thumb=thumbloc,
         reply_markup=result_buttons,
         progress=progress_for_pyrogram,
                     progress_args=(
