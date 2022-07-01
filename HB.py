@@ -13,17 +13,32 @@ HB = Client(
     api_hash = os.environ["API_HASH"]
 )  
 
+
+
+from pyrogram import enums
+import os 
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup 
+from pyrogram import Client, filters,emoji
+from pyrogram.types import Message
+import progress
+from progress import progress_for_pyrogram,TimeFormatter,time,UPLOAD_START,humanbytes,format_bytes
+
+
+HB = Client(
+    "Echo-bot", 
+    api_id = 2152187,
+    api_hash = "1a0208e94456f4799a5f5269f1198d62",
+    bot_token = "1946471767:AAEZYPiyUQKnyXWXwpNA1acdacxPEx2pGqU"
+)
+
 START_TEXT = """**
 HI {}, 
 I AM A YOUTUBE DOWNLOADER BOT
-
 MADE BY @TELSABOTS**"""
 
 HELP_TEXT = """**
 SENT ANY URL .......
-
 THEN SELECT AVAILABLE QUALITY
-
 MADE BY @TELSABOTS**
 """
 
@@ -32,7 +47,6 @@ ABOUT_TEXT = """
  🤩<b>SOURCE :</b>  <a href='https://github.com/hbbots/YOUTUBE-BOT'>CLICK HERE❤️</a>
  📢<b>CHANNEL :</b>@TELSABOTS
  🧑🏼‍💻DEV🧑🏼‍💻: @ALLUADDICT
-
 """
 
 
@@ -148,9 +162,9 @@ async def ytdl(_, message):
    l = message.text.split()
    global var
    global ythd
-   global ythigh
    global ytlow
    global yt
+   global thumbloc
    global song
    global file
    global ytaudio
@@ -168,6 +182,11 @@ async def ytdl(_, message):
    audio_size = f"{int(format_bytes(ytaudio.filesize)[0]):.2f}{format_bytes(ytaudio.filesize)[1]}"
    hd = f"{int(format_bytes(ythd.filesize)[0]):.2f}{format_bytes(ythd.filesize)[1]}"
    low = f"{int(format_bytes(ytlow.filesize)[0]):.2f}{format_bytes(ytlow.filesize)[1]}"
+   
+   import requests
+   thumbloc = yt.title + "thumb"
+   thumb = requests.get(yt.thumbnail_url, allow_redirects=True)
+   open(thumbloc , 'wb').write(thumb.content)
 
    result_buttons2 = InlineKeyboardMarkup(
     [[
@@ -197,6 +216,7 @@ async def cb_data(bot, update):
             chat_id = update.message.chat.id, 
             video = ythd.download(),
             caption=result_text,
+            duration=yt.length,
             reply_markup=result_buttons,
             progress=progress_for_pyrogram,
                     progress_args=(
@@ -216,6 +236,7 @@ async def cb_data(bot, update):
         chat_id = update.message.chat.id, 
         video = ytlow.download(),
         caption=result_text,
+        duration=yt.length,
         reply_markup=result_buttons,
        progress=progress_for_pyrogram,
                     progress_args=(
@@ -236,6 +257,7 @@ async def cb_data(bot, update):
         audio=f"{str(yt.title)}.mp3",
         caption=result_text,
         duration=yt.length,
+        thumb=thumbloc,
         reply_markup=result_buttons,
         progress=progress_for_pyrogram,
                     progress_args=(
