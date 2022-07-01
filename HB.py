@@ -6,11 +6,11 @@ import progress
 from progress import progress_for_pyrogram,TimeFormatter,time,UPLOAD_START,humanbytes,format_bytes
 
 HB = Client(
-    "Echo-bot", 
-    api_id = 2152187,
-    api_hash = "1a0208e94456f4799a5f5269f1198d62",
-    bot_token = "1946471767:AAEZYPiyUQKnyXWXwpNA1acdacxPEx2pGqU"
-)
+    "YOUTUBE Bot",
+    bot_token = os.environ["BOT_TOKEN"],
+    api_id = int(os.environ["API_ID"]),
+    api_hash = os.environ["API_HASH"]
+)  
 
 START_TEXT = """**
 HI {}, 
