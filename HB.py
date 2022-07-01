@@ -4,7 +4,7 @@ from pyrogram import Client, filters,emoji
 from pyrogram.types import Message
 import progress
 from progress import progress_for_pyrogram,TimeFormatter,time,UPLOAD_START,humanbytes,format_bytes
-
+import requests
 HB = Client(
     "YOUTUBE Bot",
     bot_token = os.environ["BOT_TOKEN"],
@@ -137,7 +137,6 @@ from pytube import YouTube
 
 ytregex = r"^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$"
 
-import asyncio 
 @HB.on_message(filters.regex(ytregex))
 async def ytdl(_, message):
    l = message.text.split()
