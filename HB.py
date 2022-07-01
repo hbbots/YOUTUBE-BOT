@@ -1,27 +1,9 @@
-
 import os 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup 
 from pyrogram import Client, filters,emoji
 from pyrogram.types import Message
 import progress
 from progress import progress_for_pyrogram,TimeFormatter,time,UPLOAD_START,humanbytes,format_bytes
-
-HB = Client(
-    "YOUTUBE Bot",
-    bot_token = os.environ["BOT_TOKEN"],
-    api_id = int(os.environ["API_ID"]),
-    api_hash = os.environ["API_HASH"]
-)  
-
-
-
-import os 
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup 
-from pyrogram import Client, filters,emoji
-from pyrogram.types import Message
-import progress
-from progress import progress_for_pyrogram,TimeFormatter,time,UPLOAD_START,humanbytes,format_bytes
-
 
 HB = Client(
     "Echo-bot", 
@@ -290,5 +272,4 @@ async def cb_data(bot, update):
         await update.message.delete()
 
 print("HB")
-
 HB.run()
