@@ -72,10 +72,10 @@ ABOUT_BUTTONS = InlineKeyboardMarkup(
         ]]
     )
 
-SOURCE_TEXT = """</b>PRESS SOURCE BUTTON \n FOR SOURCE CODE</b>"""
+SOURCE_TEXT = """<b>PRESS SOURCE BUTTON \n WATCH MY VIDEO AND\nCHECK DESCRIPTION FOR SOURCE CODE</b>"""
 SOURCE_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('✅SOURCE✅', url='https://github.com/hbbots/YOUTUBE-BOT'),
+        InlineKeyboardButton('✅SOURCE✅', url='https://youtu.be/xyW5fe0AkXo'),
         InlineKeyboardButton('🧑🏼‍💻DEV🧑🏼‍💻', url='https://telegram.me/alluaddict')
         ],[
         InlineKeyboardButton('🔐CLOSE🔐', callback_data='close')
