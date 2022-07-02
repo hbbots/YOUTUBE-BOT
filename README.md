@@ -1,6 +1,6 @@
 
 ### How To Use
-<a href="https://www.youtube.com/watch?v=xyW5fe0AkXo"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a>
+<a href="https://www.youtube.com/watch?v=xyW5fe0AkXo"><img src="https://img.shields.io/badge/How%20To%20Use-blue.svg?logo=Youtube"></a>
 
 
 <p align="center">
