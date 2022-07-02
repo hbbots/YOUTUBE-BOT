@@ -4,14 +4,14 @@ How To Use
 <a href="https://www.youtube.com/watch?v=xyW5fe0AkXo"><img src="https://img.shields.io/badge/How%20To%20Use%20Check%20My%20Youtube%20Video-orange.svg?logo=Youtube"></a>
 
 <p align="left">
-<a href="[https://www.youtube.com/watch?v=xyW5fe0AkXo](https://t.me/alluaddict)"><img src="https://img.shields.io/badge/DEVELOPER-black.svg?logo=telegram"></a>
+<a href="[https://www.youtube.com/watch?v=xyW5fe0AkXo](https://t.me/alluaddict)"><img src="https://img.shields.io/badge/DEVELOPER-black.svg?logo=[telegram](https://telegra.ph/file/e8a39b06fabbfac6bce8f.jpg)"></a>
 
 <p align="center">
   <a href="https://www.python.org">
     <img src="http://ForTheBadge.com/images/badges/made-with-python.svg">
     
 
-[![Deploy On Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/hbbots/YOUTUBE-BOT)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/hbbots/YOUTUBE-BOT)
     
     
 
