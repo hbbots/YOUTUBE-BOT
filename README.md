@@ -1,6 +1,7 @@
 
 ### How To Use
-<a href="https://www.youtube.com/watch?v=xyW5fe0AkXo"><img src="https://img.shields.io/badge/How%20To%20Use-blue.svg?logo=Youtube"></a>
+<p align="center">
+<a href="https://www.youtube.com/watch?v=xyW5fe0AkXo"><img src="https://img.shields.io/badge/How%20To%20Use%20Check%20My%20Youtubr%20Video-red.svg?logo=Youtube"></a>
 
 
 <p align="center">
@@ -8,7 +9,7 @@
     <img src="http://ForTheBadge.com/images/badges/made-with-python.svg">
     
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/hbbots/YOUTUBE-BOT)
+[![Deploy On Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/hbbots/YOUTUBE-BOT)
     
     
 
