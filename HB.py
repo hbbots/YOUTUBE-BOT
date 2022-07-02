@@ -134,10 +134,9 @@ async def about_message(bot, update):
 
 
 from pytube import YouTube
-
-ytregex = r"^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$"
-
-@HB.on_message(filters.regex(ytregex))
+VIDEO_REGEX = r'(.*)youtube.com/(.*)[&|?]v=(?P<video>[^&]*)(.*)'
+PLAYLIST_REGEX = r'(.*)youtube.com/(.*)[&|?]list=(?P<playlist>[^&]*)(.*)'
+@HB.on_message(filters.regex(VIDEO_REGEX))
 async def ytdl(_, message):
    l = message.text.split()
    global var
