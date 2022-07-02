@@ -1,10 +1,10 @@
 <p align="center">
-### How To Use
+How To Use
 <p align="center">
 <a href="https://www.youtube.com/watch?v=xyW5fe0AkXo"><img src="https://img.shields.io/badge/How%20To%20Use%20Check%20My%20Youtube%20Video-orange.svg?logo=Youtube"></a>
 
 <p align="center">
-<a href="https://www.youtube.com/watch?v=xyW5fe0AkXo"><img src="https://img.shields.io/badge/How%20To%20Use%20Check%20My%20Youtube%20Video-orange.svg?logo=telegram"></a>
+<a href="[https://www.youtube.com/watch?v=xyW5fe0AkXo](https://t.me/alluaddict)"><img src="https://img.shields.io/badge/DEVELOPER-violet.svg?logo=telegram"></a>
 
 <p align="center">
   <a href="https://www.python.org">
