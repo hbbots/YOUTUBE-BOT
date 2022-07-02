@@ -7,9 +7,9 @@ How To Use
 
 <p align="center">
 <a href="https://www.youtube.com/watch?v=xyW5fe0AkXo"><img src="https://img.shields.io/badge/THE%20HB%20SUBSCRIBE-darkblue.svg?logo=Youtube"></a>
-<p align="right">
+<p align="center">
 <a href="https://t.me/alluaddict"><img alt="telegram" src="https://img.shields.io/badge/THE HB TELEGRAM-%22B1B17.svg?&logo=telegram&logoColor=red"></a>
-<p align="left">
+<p align="center">
 <a href="https://t.me/TELSABOTS"><img alt="telegram" src="https://img.shields.io/badge/HB BOTS TELEGRAM-%22B1B17.svg?&logo=telegram&logoColor=red"></a>
 <p align="center">
   
