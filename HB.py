@@ -263,6 +263,24 @@ async def cb_data(bot, update):
     
     else:
         await update.message.delete()
+import pytube
+import re
+from pytube import YouTube
+from pytube import Playlist
 
+@HB.on_message(filters.text & filters.private)
+async def ytdl(_, update):
+   purl=update.text
+   pyt = Playlist(purl)
+  
+   for video in pyt.videos:
+    phd =video.streams.get_highest_resolution()
+    
+    await  HB.send_video(
+            chat_id = update.chat.id, 
+            caption=(f"⭕️ PLAYLIST : "+ pyt.title + "\n📥 DOWNLOADED " + "\n✅ JOIN @TELSABOTS" ),
+            video = phd.download(),
+            
+        )
 print("HB")
 HB.run()
