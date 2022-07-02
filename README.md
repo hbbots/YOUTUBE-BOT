@@ -8,6 +8,7 @@ How To Use
 <p align="center">
 <a href="https://www.youtube.com/watch?v=xyW5fe0AkXo"><img src="https://img.shields.io/badge/THE%20HB%20SUBSCRIBE-darkblue.svg?logo=Youtube"></a>
 
+<a href="https://t.me/alluaddict"><img alt="telegram" src="https://img.shields.io/badge/Updates-%22B1B17.svg?&logo=telegram&logoColor=pink"></a>
 <p align="center">
   <a href="https://www.python.org">
     <img src="http://ForTheBadge.com/images/badges/made-with-python.svg">
