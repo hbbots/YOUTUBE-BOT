@@ -168,8 +168,11 @@ async def ytdl(_, message):
         InlineKeyboardButton('🎬 360p ' + '⭕️ ' +  low, callback_data='360p')
     ],[
         InlineKeyboardButton('🎧 AUDIO '+  '⭕️ ' +  audio_size , callback_data='audio')
+    ],[
+        InlineKeyboardButton('🖼THUMBNAIL🖼', callback_data='thumbnail')
     ]]
    )
+   
    await message.reply_photo(
             photo=thumb,
             caption="🎬 TITLE : "+ yt.title +  "\n\n📤 UPLOADED : " + yt.author  + "\n\n📢 CHANNEL LINK " + f'https://www.youtube.com/channel/{yt.channel_id}',
@@ -190,7 +193,6 @@ async def cb_data(bot, update):
             chat_id = update.message.chat.id, 
             video = ythd.download(),
             caption=result_text,
-            duration=yt.length,
             reply_markup=result_buttons,
             progress=progress_for_pyrogram,
                     progress_args=(
@@ -199,6 +201,7 @@ async def cb_data(bot, update):
                         start_time
                     )
       )
+        await update.message.delete()
      except:
         await HB.send_message(
             chat_id = update.message.chat.id,
@@ -210,7 +213,6 @@ async def cb_data(bot, update):
         chat_id = update.message.chat.id, 
         video = ytlow.download(),
         caption=result_text,
-        duration=yt.length,
         reply_markup=result_buttons,
        progress=progress_for_pyrogram,
                     progress_args=(
@@ -219,6 +221,7 @@ async def cb_data(bot, update):
                         start_time
                     )
         )
+      await update.message.delete()
 
      except:
         await HB.send_message(
@@ -239,7 +242,15 @@ async def cb_data(bot, update):
                         start_time
                     )
       )
-     
+        await update.message.delete()
+
+    elif update.data == 'thumbnail':
+        await HB.send_photo(
+            chat_id = update.message.chat.id, 
+            photo=thumb,
+            caption="**JOIN @TELSABOTS**"
+        )
+        await update.message.delete()    
 
     elif update.data == "home":
         await update.message.edit_text(
