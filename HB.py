@@ -155,6 +155,7 @@ async def ytdl(_, message):
    global yt
    global song
    global file
+   global thumb
    global ytaudio
    var=message.text
    url= message.text
