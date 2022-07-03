@@ -17,7 +17,9 @@ HI {},
 I AM A  ADVANCED YOUTUBE DOWNLOADER BOT
 I CAN DOWNLOAD YOUTUBE VIDEOS ,THUMBNAIL
 AND PLAYLIST VIDEOS....
-
+ONE OF THE SPPEDEST YOUTUBE BOT 
+I CAN DOWNLOAD 911mb VIDEOS
+IN 1min 
 MADE BY @TELSABOTS**"""
 
 HELP_TEXT = """**
@@ -34,10 +36,19 @@ MADE BY @TELSABOTS**
 """
 
 ABOUT_TEXT = """
- 🤖<b>BOT :YOUTUBE DOWNLOADER 🤖</b>
- 🤩<b>SOURCE :</b>  <a href='https://github.com/hbbots/YOUTUBE-BOT'>CLICK HERE❤️</a>
- 📢<b>CHANNEL :</b>@TELSABOTS
+ 🤖<b>BOT :YOUTUBE DOWNLOADER </b>
+ 
  🧑🏼‍💻DEV🧑🏼‍💻: @ALLUADDICT
+ 
+ 📢<b>CHANNEL :</b>@TELSABOTS
+ 
+ 📝<b>Language :</b>  <a href='https://python.org/'>Python3</a>
+ 
+ 🧰<b>Frame Work :</b>  <a href='https://pyrogram.org/'>Pyrogram</a>
+ 
+ 🤩<b>SOURCE :</b>  <a href='https://youtu.be/xyW5fe0AkXo'>CLICK HERE</a>
+ 
+ 
 """
 
 
