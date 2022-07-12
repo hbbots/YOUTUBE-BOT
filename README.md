@@ -35,5 +35,13 @@ How To Use
 
 </details>
 
+#### ADD THESE AS COMMANDS IN BOTFATHER
+
+```python
+start-TO CHECK WETHER BOT IS 🤩ALIVE
+help-To KNOW HOW TO USE ME😇
+about -TO KNOW MORE ABOUT ME🤓
+source-TO GET SOURCE CODE❤️
+```
   
 
